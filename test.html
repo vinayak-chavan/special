@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Happy Valentine's Day Patarika ❤️</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffb199);
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow-x: hidden;
+    color: white;
+}
+
+/* Floating Hearts Background */
+body::before {
+    content: "";
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background-image: url("https://i.imgur.com/3ZQ3ZQF.png");
+    opacity: 0.05;
+    z-index: -1;
+}
+
+.card {
+    backdrop-filter: blur(20px);
+    background: rgba(255, 255, 255, 0.15);
+    padding: 40px;
+    border-radius: 25px;
+    text-align: center;
+    width: 90%;
+    max-width: 700px;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
+    animation: fadeIn 2s ease;
+}
+
+h1 {
+    font-family: 'Great Vibes', cursive;
+    font-size: 3rem;
+    margin-bottom: 20px;
+    animation: glow 2s infinite alternate;
+}
+
+@keyframes glow {
+    from { text-shadow: 0 0 10px #fff; }
+    to { text-shadow: 0 0 25px #ff4d6d; }
+}
+
+p {
+    font-size: 1rem;
+    line-height: 1.8;
+    margin-bottom: 20px;
+}
+
+.image-container img {
+    width: 250px;
+    margin: 20px 0;
+    animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+    100% { transform: translateY(0); }
+}
+
+button {
+    padding: 15px 35px;
+    font-size: 1rem;
+    border: none;
+    border-radius: 50px;
+    cursor: pointer;
+    background: linear-gradient(45deg, #ff4d6d, #ff1e4d);
+    color: white;
+    transition: 0.4s;
+}
+
+button:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
+}
+
+.hidden-message {
+    margin-top: 20px;
+    display: none;
+    font-size: 1rem;
+    animation: fadeIn 2s ease-in-out;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* Floating hearts animation */
+.heart {
+    position: fixed;
+    bottom: -10px;
+    font-size: 20px;
+    animation: rise 6s linear infinite;
+}
+
+@keyframes rise {
+    0% { transform: translateY(0); opacity: 1; }
+    100% { transform: translateY(-100vh); opacity: 0; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="card">
+    <h1>Happy Valentine's Day, Patarika ❤️</h1>
+
+    <div class="image-container">
+        <img src="il_fullxfull.6566607239_8tem.avif" alt="Dudu Bubu Love">
+    </div>
+
+    <p>
+        My cutest Patarika 💖 <br>
+        You are the most beautiful part of my life. <br>
+        Every moment with you feels magical ✨ <br>
+        I am so lucky to have you.
+    </p>
+
+    <button onclick="showMessage()">Click for Surprise 💌</button>
+
+    <div class="hidden-message" id="message">
+        You are my forever Valentine 💍 <br>
+        I love you more than words can express ❤️ <br><br>
+        Always yours, <br>
+        Your Dudu 🐻💕
+    </div>
+</div>
+
+<!-- Optional Romantic Music -->
+<!--
+<audio autoplay loop>
+  <source src="music.mp3" type="audio/mpeg">
+</audio>
+-->
+
+<script>
+function showMessage() {
+    document.getElementById("message").style.display = "block";
+}
+
+// Floating hearts effect
+setInterval(() => {
+    const heart = document.createElement("div");
+    heart.classList.add("heart");
+    heart.style.left = Math.random() * 100 + "vw";
+    heart.innerHTML = "💖";
+    document.body.appendChild(heart);
+
+    setTimeout(() => {
+        heart.remove();
+    }, 6000);
+}, 400);
+</script>
+
+</body>
+</html>
+

@@ -1,125 +1,144 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Happy Valentine's Day Patarika ❤️</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Happy Valentine's Day Patarika ❤️</title>
+    
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-<!-- Google Fonts -->
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&family=Great+Vibes&display=swap" rel="stylesheet">
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffb199);
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            overflow-x: hidden;
+            color: white;
+        }
 
-<style>
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
+        /* Glass Card */
+        .card {
+            width: 100%;
+            max-width: 700px;
+            backdrop-filter: blur(18px);
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 25px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0,0,0,0.3);
+            animation: fadeIn 1.5s ease;
+        }
 
-body {
-    font-family: 'Poppins', sans-serif;
-    background: linear-gradient(135deg, #ff758c, #ff7eb3, #ffb199);
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    overflow-x: hidden;
-    color: white;
-}
+        /* Title */
+        h1 {
+            font-family: 'Great Vibes', cursive;
+            font-size: clamp(2.5rem, 7vw, 3.5rem);
+            margin-bottom: 20px;
+            animation: glow 2s infinite alternate;
+        }
 
-/* Floating Hearts Background */
-body::before {
-    content: "";
-    position: fixed;
-    width: 100%;
-    height: 100%;
-    background-image: url("https://i.imgur.com/3ZQ3ZQF.png");
-    opacity: 0.05;
-    z-index: -1;
-}
+        /* Paragraph */
+        p {
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
 
-.card {
-    backdrop-filter: blur(20px);
-    background: rgba(255, 255, 255, 0.15);
-    padding: 40px;
-    border-radius: 25px;
-    text-align: center;
-    width: 90%;
-    max-width: 700px;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.3);
-    animation: fadeIn 2s ease;
-}
+        /* Image Container */
+        .image-container {
+            margin: 30px 0;
+        }
 
-h1 {
-    font-family: 'Great Vibes', cursive;
-    font-size: 3rem;
-    margin-bottom: 20px;
-    animation: glow 2s infinite alternate;
-}
+        .image-container img {
+            width: 100%;
+            max-width: 280px;
+            height: auto;
+            border-radius: 50%;
+            border: 5px solid rgba(255, 255, 255, 0.5);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            animation: float 3s ease-in-out infinite;
+        }
 
-@keyframes glow {
-    from { text-shadow: 0 0 10px #fff; }
-    to { text-shadow: 0 0 25px #ff4d6d; }
-}
+        /* Button */
+        button {
+            padding: 14px 30px;
+            font-size: clamp(0.9rem, 3.5vw, 1.1rem);
+            border: none;
+            border-radius: 50px;
+            cursor: pointer;
+            background: linear-gradient(45deg, #ff4d6d, #ff1e4d);
+            color: white;
+            font-weight: 600;
+            transition: 0.4s;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+            margin-top: 10px;
+        }
 
-p {
-    font-size: 1rem;
-    line-height: 1.8;
-    margin-bottom: 20px;
-}
+        button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 15px 35px rgba(0,0,0,0.5);
+        }
 
-.image-container img {
-    width: 250px;
-    margin: 20px 0;
-    animation: float 3s ease-in-out infinite;
-}
+        /* Hidden Message */
+        .hidden-message {
+            margin-top: 25px;
+            display: none;
+            font-size: clamp(1rem, 4vw, 1.2rem);
+            animation: fadeIn 1.5s ease-in-out;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 20px;
+            border-radius: 15px;
+            backdrop-filter: blur(10px);
+        }
 
-@keyframes float {
-    0% { transform: translateY(0); }
-    50% { transform: translateY(-15px); }
-    100% { transform: translateY(0); }
-}
+        /* Animations */
+        @keyframes glow {
+            from { text-shadow: 0 0 15px #fff, 0 0 25px #fff; }
+            to { text-shadow: 0 0 25px #fff, 0 0 35px #ff4d6d, 0 0 45px #ff4d6d; }
+        }
 
-button {
-    padding: 15px 35px;
-    font-size: 1rem;
-    border: none;
-    border-radius: 50px;
-    cursor: pointer;
-    background: linear-gradient(45deg, #ff4d6d, #ff1e4d);
-    color: white;
-    transition: 0.4s;
-}
+        @keyframes float {
+            0% { transform: translateY(0); }
+            50% { transform: translateY(-15px); }
+            100% { transform: translateY(0); }
+        }
 
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.4);
-}
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(15px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
 
-.hidden-message {
-    margin-top: 20px;
-    display: none;
-    font-size: 1rem;
-    animation: fadeIn 2s ease-in-out;
-}
+        /* Floating hearts */
+        .heart {
+            position: fixed;
+            bottom: -10px;
+            font-size: 22px;
+            animation: rise 6s linear infinite;
+            pointer-events: none;
+        }
 
-@keyframes fadeIn {
-    from { opacity: 0; transform: translateY(10px); }
-    to { opacity: 1; transform: translateY(0); }
-}
+        @keyframes rise {
+            0% { transform: translateY(0) rotate(0deg); opacity: 1; }
+            100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
+        }
 
-/* Floating hearts animation */
-.heart {
-    position: fixed;
-    bottom: -10px;
-    font-size: 20px;
-    animation: rise 6s linear infinite;
-}
-
-@keyframes rise {
-    0% { transform: translateY(0); opacity: 1; }
-    100% { transform: translateY(-100vh); opacity: 0; }
-}
-</style>
+        /* Extra small devices */
+        @media (max-width: 400px) {
+            .card {
+                padding: 25px 15px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -128,7 +147,8 @@ button:hover {
     <h1>Happy Valentine's Day, Patarika ❤️</h1>
 
     <div class="image-container">
-        <img src="il_fullxfull.6566607239_8tem.avif" alt="Dudu Bubu Love">
+        <!-- <img src="https://i.pinimg.com/736x/fd/68/c6/fd68c6c0bf1f2a11fe8e0e5f0c27bd8b.jpg" alt="Dudu Bubu Love" onerror="this.src='data:image/svg+xml,%3Csvg xmlns=%22http://www.w3.org/2000/svg%22 width=%22280%22 height=%22280%22%3E%3Ccircle cx=%22140%22 cy=%22140%22 r=%22130%22 fill=%22%23FFB6C1%22/%3E%3Ctext x=%2250%25%22 y=%2245%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2260%22%3E🐻%3C/text%3E%3Ctext x=%2250%25%22 y=%2265%25%22 dominant-baseline=%22middle%22 text-anchor=%22middle%22 font-size=%2260%22%3E💕%3C/text%3E%3C/svg%3E'"> -->
+       <img src="il_fullxfull.6566607239_8tem.avif />
     </div>
 
     <p>
@@ -143,29 +163,24 @@ button:hover {
     <div class="hidden-message" id="message">
         You are my forever Valentine 💍 <br>
         I love you more than words can express ❤️ <br><br>
-        Always yours, <br>
-        Your Dudu 🐻💕
+        <strong>Always yours,</strong> <br>
+        Your Love 💕
     </div>
 </div>
 
-<!-- Optional Romantic Music -->
-<!--
-<audio autoplay loop>
-  <source src="music.mp3" type="audio/mpeg">
-</audio>
--->
-
 <script>
 function showMessage() {
-    document.getElementById("message").style.display = "block";
+    const msg = document.getElementById("message");
+    msg.style.display = msg.style.display === "block" ? "none" : "block";
 }
 
-// Floating hearts effect
+// Floating hearts
 setInterval(() => {
     const heart = document.createElement("div");
     heart.classList.add("heart");
     heart.style.left = Math.random() * 100 + "vw";
-    heart.innerHTML = "💖";
+    heart.style.animationDelay = Math.random() * 2 + "s";
+    heart.innerHTML = ["💖", "💕", "❤️", "💗"][Math.floor(Math.random() * 4)];
     document.body.appendChild(heart);
 
     setTimeout(() => {
@@ -176,4 +191,3 @@ setInterval(() => {
 
 </body>
 </html>
-
